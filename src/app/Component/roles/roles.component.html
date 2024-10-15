@@ -1,1 +1,56 @@
 <p>roles works!</p>
+<div class="div">
+    <div class="row">
+        <div class="col-6">
+            {{firstName}}
+        </div>
+        <div class="col-6">
+            {{angularVersion}}
+        </div>
+    </div>
+</div>
+
+<div class="div">
+    <div class="row">
+        <div class="col-6">
+            <input type="text" [value]="firstName">
+        </div>
+        <div class="col-6">
+            <input [type]="inputType">
+        </div>
+    </div>
+</div>
+
+<div class="div">
+    <div class="row mt-5">
+        <div class="col-3">
+            <input type="text" [(ngModel)]="firstName">
+        </div>
+        <div class="col-3">
+            <select [(ngModel)]="SelectedState">
+                <option value="KA">Karntataka</option>
+                <option value="TN">TamilNadu</option>
+                <option value="KL">Kerala</option>
+                <option value="AP">AndraPradesh</option>
+            </select>
+        </div>
+        <div class="col">
+            <p>{{SelectedState}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="div">
+    <div class="row mt-5">
+        <div class="col-3">
+            <button class="btn btn-primary" (click)="showWelcomealert('Welcome to Emplyoe Management Project')">Show Message</button>
+        </div>
+        <div class="col-3">
+            <button class="btn btn-warning" (click)="showWelcomealert2()">Show React</button>
+        </div>
+        <div class="col-3">
+            <button class="btn btn-secondary" (click)="showWelcomealert3()">Show Angular</button>
+        </div>
+    </div>
+</div>
+
