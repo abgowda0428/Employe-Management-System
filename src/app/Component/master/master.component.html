@@ -2,10 +2,10 @@
 <div class="div">
     <div class="row">
         <div class="col-6 text-center">
-            <button type="button" class="btn btn-primary btn-lg" (click)="ChangeComponent('Roles')">Roles</button>
+            <button type="button" class="btn btn-primary btn-lg" [ngClass]="Component == 'Roles' ? 'btn-danger' : 'btn-primary' " (click)="ChangeComponent('Roles')">Roles</button>
         </div>
         <div class="col-6 text-center">
-            <button type="button" class="btn btn-warning btn-lg"(click)="ChangeComponent('Designation')">Designation</button>
+            <button type="button" class="btn btn-warning btn-lg" [ngClass]="Component == 'Designation' ? 'btn-danger' : 'btn-warning'" (click)="ChangeComponent('Designation')">Designation</button>
         </div>
     </div>
 </div>
