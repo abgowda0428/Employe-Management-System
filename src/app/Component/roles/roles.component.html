@@ -1,4 +1,4 @@
-<p>roles works!</p>
+<!-- <p>roles works!</p>
 <div class="div">
     <div class="row">
         <div class="col-6">
@@ -53,4 +53,46 @@
         </div>
     </div>
 </div>
+ -->
 
+
+ <!-- <div class="row">
+    <div class="col-12">
+        <ul>
+            <li *ngFor="let item of rolelist">{{item.role}}</li>
+        </ul>
+    </div>
+    <div class="col-12">
+        <select>
+            <option *ngFor="let item of rolelist" [value]="item.roleId">{{item.role}}</option>
+        </select>
+    </div>
+ </div> -->
+
+ <div class="div">
+    <div class="row">
+        <div class="col-6">
+
+            <table class="table table-bodered">
+                <thead>
+                    <tr>
+                        <th>SlNo</th>
+                        <th>Roles</th>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of rolelist">
+                        <td>{{item.roleId}}hello</td>
+                        <td>{{item.role}}abhishek</td>
+                    </tr>
+                </tbody>
+             </table>
+
+        </div>
+
+      
+
+    </div>
+ </div>
+ 
