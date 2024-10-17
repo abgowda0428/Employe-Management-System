@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component ,inject,OnInit} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Irole } from '../model/interface/Role';
+import { APIget, Irole } from '../model/interface/Role';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -19,16 +19,21 @@ export class RolesComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.getallRoles
+    this.getAllRoles();
   }
 
-  getallRoles(){
-    this.http.get("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles").subscribe((res:any)=>{
-      this.rolelist = res.data;
+  getAllRoles() {
+    this.http.get<APIget>("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles")
+    .subscribe(
+      (res: APIget) => {
+        this.rolelist = res.data;
+      },
+      (error) => {
+        alert("API Error/Network Down");
+      }
+    );
+}
 
-    })
-
-  }
 
 
 
