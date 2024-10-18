@@ -13,15 +13,18 @@ export class DesignationComponent implements OnInit {
 
   Masterservice = inject(MasterService)
 
+  isloder:boolean = true;
+
   DesignationList : IdedignationRoles[] =[];
 
   ngOnInit(): void {
     this.Masterservice.getDesignation().subscribe((res:APIget)=>{
 
-      this.DesignationList = res.data
+      this.DesignationList = res.data,this.isloder = false;
       
     },error=>{
-      alert("API Error / Network Down")
+      alert("API Error / Network Down"),
+      this.isloder = false
     })
   }
 
